@@ -55,15 +55,9 @@ docker build -t pdf_question_answering .
 
 ### 2. Run the container with a volume mount
 
-Mount `data_source` so that any PDFs you downloaded locally are visible inside the container:
-
 ```bash
 docker run -d -p 5000:5000 -v "$(pwd)/data_source:/app/data_source" --name pdf_qna pdf_question_answering
 ```
-
-- `-v "$(pwd)/data_source:/app/data_source"`: share your local `data_source` directory
-- `-p 5000:5000`: expose FastAPI at `http://localhost:5000`
-
 
 ### 3. Test the API
 
