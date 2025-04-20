@@ -11,7 +11,7 @@ nf4_config = BitsAndBytesConfig(
 )
 
 
-def get_hf_llm(model_name="meta-llama/Llama-3.2-3B-Instruct", max_new_token=1024, **kwargs):
+def get_hf_llm(model_name="mistralai/Mistral-7B-Instruct-v0.1", max_new_token=1024, **kwargs):
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         quantization_config=nf4_config,
